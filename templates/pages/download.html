@@ -1,0 +1,13 @@
+<button type="button" class="btn btn-primary" onclick="downloadFile('{{ file.changed_values.url }}')">Changed</button><br>
+{{ file.changed_values.url }}<br>
+<button type="button" class="btn btn-primary" onclick="downloadFile('{{ file.uniquevalues_one.url }}')">Unique one</button>
+<button type="button" class="btn btn-primary" onclick="downloadFile('{{ file.uniquevalues_two.url }}')">Unique two</button>
+
+<script>
+function downloadFile(url, fileName) {
+    let link = document.createElement('a');
+    link.href = url;
+    link.download = fileName;
+    link.click();
+}
+</script>
